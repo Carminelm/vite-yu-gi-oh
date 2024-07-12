@@ -1,8 +1,30 @@
-<template>
+<script>
+import { store } from '../store'
+export default {
+    name: 'AppHeader',
+    data() {
+        return {
+            store
+        }
+    }
+}
+</script>
+<template lang="">
     <header>
-      <div class="d-flex py-3">
-        <img class="align-self-center px-3" height="25" src="../assets/img/logo.jpeg" alt="" />
-        <h1 class="">Yu-Gi-Oh API</h1>
-      </div>
+        <div class="container d-flex my-2 ms-2">
+            <img id="logo" src="../assets/img/logo.jpeg" alt="Yu-Gi-Oh!">
+            <h1 class="ms-3">{{store.app_title}}</h1>
+        </div>
     </header>
-  </template>
+</template>
+<style lang="scss">
+@use '../styles/generals.scss';
+
+header {
+    height: 75px;
+}
+
+#logo {
+    width: 100px
+}
+</style>
